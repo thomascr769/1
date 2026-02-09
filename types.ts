@@ -1,18 +1,29 @@
+export interface Song {
+  title: string;
+  artist: string;
+  url: string; // URL to mp3
+  coverUrl: string;
+}
+
+export interface Photo {
+  id: number;
+  url: string;
+  caption: string;
+  albumImages: string[]; // Array of 3 images for the album view
+}
+
 export interface QuizQuestion {
   id: number;
   question: string;
   options: string[];
   correctAnswer: number; // Index of the correct option
-}
-
-export interface Quote {
-  text: string;
-  author: string;
+  successMessage: string;
 }
 
 export enum AppSection {
-  HOME = 'HOME',
+  HERO = 'HERO',
+  GALLERY = 'GALLERY',
   QUIZ = 'QUIZ',
-  QUOTES = 'QUOTES',
-  POEM = 'POEM'
+  CLEANING = 'CLEANING',
+  LETTER = 'LETTER'
 }

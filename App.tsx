@@ -1,86 +1,174 @@
 import React, { useState } from 'react';
-import { Heart, MessageCircleHeart, PenTool, Home as HomeIcon } from 'lucide-react';
-import HeartBackground from './components/HeartBackground';
-import Home from './components/Home';
+import { Heart } from 'lucide-react';
+import Hero from './components/Hero';
+import Gallery from './components/Gallery';
+import AudioPlayer from './components/AudioPlayer';
 import Quiz from './components/Quiz';
-import QuoteGenerator from './components/QuoteGenerator';
-import PoemGenerator from './components/PoemGenerator';
+import TeethCleaning from './components/TeethCleaning';
+import MouthTransition from './components/MouthTransition';
+import { BACKGROUND_MUSIC, GALLERY_MUSIC, PHOTOS, QUIZ_QUESTIONS, PARTNER_NAME } from './constants';
 import { AppSection } from './types';
 
-const App: React.FC = () => {
-  const [currentSection, setCurrentSection] = useState<AppSection>(AppSection.HOME);
+// Simple Tooth for Background
+const ToothBg: React.FC<{ className?: string, style?: React.CSSProperties }> = ({ className, style }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    className={className}
+    style={style}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M8 2C6 2.5 4 5 4 9C4 14 6 16 6 16C6 16 6 18 8 20C9.5 21.5 11 20 12 18C13 20 14.5 21.5 16 20C18 18 18 16 18 16C18 16 20 14 20 9C20 5 18 2.5 16 2C14.5 1.5 13 3 12 5C11 3 9.5 1.5 8 2Z" />
+  </svg>
+);
 
-  const renderSection = () => {
-    switch (currentSection) {
-      case AppSection.HOME:
-        return <Home onStart={() => setCurrentSection(AppSection.QUOTES)} />;
-      case AppSection.QUIZ:
-        return <Quiz />;
-      case AppSection.QUOTES:
-        return <QuoteGenerator />;
-      case AppSection.POEM:
-        return <PoemGenerator />;
-      default:
-        return <Home onStart={() => setCurrentSection(AppSection.QUOTES)} />;
-    }
+const App: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<AppSection>(AppSection.HERO);
+  const [isMouthOpen, setIsMouthOpen] = useState(true);
+  
+  // Audio State
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentSong, setCurrentSong] = useState(BACKGROUND_MUSIC);
+
+  const startExperience = () => {
+    // Start music on first interaction
+    setIsPlaying(true);
+    
+    // 1. Close the mouth
+    setIsMouthOpen(false);
+
+    // 2. Wait for close animation (700ms), then switch content
+    setTimeout(() => {
+        setActiveSection(AppSection.QUIZ);
+        window.scrollTo({ top: 0, behavior: 'auto' }); // Instant scroll while hidden
+        
+        // 3. Wait a little moment while closed, then open
+        setTimeout(() => {
+            setIsMouthOpen(true);
+        }, 500);
+    }, 750);
+  };
+
+  const handleQuizComplete = () => {
+    // Switch Music for Gallery Section
+    setCurrentSong(GALLERY_MUSIC);
+    setIsPlaying(true);
+
+    setActiveSection(AppSection.GALLERY);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleGoToCleaning = () => {
+    setActiveSection(AppSection.CLEANING);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCleaningComplete = () => {
+     setActiveSection(AppSection.LETTER);
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Callback to pause background music when special memory plays in Quiz
+  const handleMemoryStart = () => {
+    setIsPlaying(false);
+  };
+
+  // Callback to resume background music when special memory ends
+  const handleMemoryEnd = () => {
+    setIsPlaying(true);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-red-50 to-pink-100 text-gray-800 font-sans relative">
-      <HeartBackground />
+    <div className="min-h-screen bg-slate-50 text-slate-800 pb-24 font-sans selection:bg-dental-200 selection:text-dental-900 overflow-hidden transition-colors duration-500">
+      
+      {/* Dental Transition Overlay */}
+      <MouthTransition isOpen={isMouthOpen} />
 
-      <main className="relative z-10 container mx-auto px-4 pb-24 pt-8 min-h-screen flex flex-col">
-        {/* Header */}
-        <header className="flex justify-between items-center py-4 mb-4">
-          <div 
-            className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
-            onClick={() => setCurrentSection(AppSection.HOME)}
-          >
-            <div className="bg-white p-2 rounded-full shadow-sm">
-               <Heart className="w-6 h-6 text-red-500 fill-red-500" />
-            </div>
-            <span className="font-bold text-xl text-red-600 hidden md:block romantic-font">Our Love Story</span>
-          </div>
-        </header>
+      {/* Background Ambience - Light Theme Pastels */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* Minty fresh blob */}
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-dental-200/40 rounded-full blur-[80px]"></div>
+        {/* Soft pink blob */}
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-valentine-200/40 rounded-full blur-[80px]"></div>
+        
+        {/* Floating Teeth Background - Subtle */}
+        <ToothBg className="absolute top-[20%] right-[10%] w-16 h-16 text-dental-300 opacity-20 animate-float" style={{ animationDuration: '8s' }} />
+        <ToothBg className="absolute bottom-[30%] left-[5%] w-24 h-24 text-valentine-300 opacity-20 animate-float" style={{ animationDuration: '12s', animationDelay: '1s' }} />
+        <ToothBg className="absolute top-[60%] right-[20%] w-12 h-12 text-slate-300 opacity-20 animate-float" style={{ animationDuration: '10s', animationDelay: '2s' }} />
+      </div>
 
-        {/* Dynamic Content */}
-        <div className="flex-grow flex items-center justify-center">
-          {renderSection()}
-        </div>
-
-        {/* Bottom Navigation */}
-        {currentSection !== AppSection.HOME && (
-          <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl border border-pink-100 z-50 flex gap-6 md:gap-8">
-            <button
-              onClick={() => setCurrentSection(AppSection.QUOTES)}
-              className={`flex flex-col items-center gap-1 transition-all duration-300 ${
-                currentSection === AppSection.QUOTES ? 'text-red-500 scale-110' : 'text-gray-400 hover:text-red-400'
-              }`}
-            >
-              <MessageCircleHeart className="w-6 h-6" />
-              <span className="text-xs font-medium">Quotes</span>
-            </button>
-            <button
-              onClick={() => setCurrentSection(AppSection.QUIZ)}
-              className={`flex flex-col items-center gap-1 transition-all duration-300 ${
-                currentSection === AppSection.QUIZ ? 'text-red-500 scale-110' : 'text-gray-400 hover:text-red-400'
-              }`}
-            >
-              <Heart className="w-6 h-6" />
-              <span className="text-xs font-medium">Quiz</span>
-            </button>
-            <button
-              onClick={() => setCurrentSection(AppSection.POEM)}
-              className={`flex flex-col items-center gap-1 transition-all duration-300 ${
-                currentSection === AppSection.POEM ? 'text-red-500 scale-110' : 'text-gray-400 hover:text-red-400'
-              }`}
-            >
-              <PenTool className="w-6 h-6" />
-              <span className="text-xs font-medium">Poem</span>
-            </button>
-          </nav>
+      <div className="relative z-10 max-w-lg mx-auto min-h-screen flex flex-col">
+        
+        {activeSection === AppSection.HERO && (
+          <Hero onStart={startExperience} partnerName={PARTNER_NAME} />
         )}
-      </main>
+
+        {activeSection === AppSection.QUIZ && (
+          <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
+             <Quiz 
+               questions={QUIZ_QUESTIONS} 
+               onComplete={handleQuizComplete} 
+               onMemoryStart={handleMemoryStart}
+               onMemoryEnd={handleMemoryEnd}
+             />
+          </div>
+        )}
+
+        {activeSection === AppSection.GALLERY && (
+           <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
+             {/* Header when inside the main content */}
+             <div className="p-6 text-center border-b border-slate-200 bg-white/60 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+               <h1 className="font-script text-3xl text-valentine-500 drop-shadow-sm">Smiles We Share</h1>
+             </div>
+
+             <div className="flex flex-col gap-4">
+                <Gallery photos={PHOTOS} onNext={handleGoToCleaning} />
+             </div>
+           </div>
+        )}
+
+        {activeSection === AppSection.CLEANING && (
+            <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 flex-1 flex flex-col justify-center">
+                 <TeethCleaning onComplete={handleCleaningComplete} />
+            </div>
+        )}
+
+        {activeSection === AppSection.LETTER && (
+            <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 p-6 flex flex-col items-center justify-center min-h-[80vh]">
+                <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-valentine-100 relative max-w-sm w-full transform rotate-1">
+                   {/* Decorative Tape */}
+                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-dental-200/50 rotate-[-2deg] block"></div>
+
+                   <h2 className="font-script text-4xl text-valentine-600 mb-6 text-center">My Dearest...</h2>
+                   
+                   <p className="text-slate-700 leading-relaxed font-medium text-lg mb-6">
+                       From our first meeting on the terrace to every song we've shared, 
+                       my life has been brighter with you in it. 
+                       <br/><br/>
+                       Thank you for being with me for over 900 days, i hope we stay forever. I love you.
+                   </p>
+
+                   <p className="font-script text-3xl text-right text-dental-600">
+                       Happy Valentine's Day! ❤️
+                   </p>
+                   
+                   <div className="absolute -bottom-4 -right-4 text-valentine-300 animate-bounce">
+                       <Heart size={48} fill="currentColor" />
+                   </div>
+                </div>
+                
+                <p className="mt-12 text-sm text-slate-400">Forever & Always</p>
+            </div>
+        )}
+
+      </div>
+
+      {/* Persistent Audio Player */}
+      <AudioPlayer 
+        song={currentSong} 
+        isPlaying={isPlaying} 
+        onTogglePlay={() => setIsPlaying(!isPlaying)}
+      />
     </div>
   );
 };
