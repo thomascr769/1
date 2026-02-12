@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+<<<<<<< HEAD
 //import './index.css';
+=======
+>>>>>>> 6e656ca (Inital commit)
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
