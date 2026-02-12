@@ -8,80 +8,90 @@ export const PROFILE_PICTURE = "./profile.jpg";
 
 // Replace this with your specific teeth image if you have one locally
 // e.g., "/assets/teeth_photo.jpg"
-export const TEETH_IMAGE_SRC = "./t-smile.jpg";
-
+export const TEETH_IMAGE_SRC = "./album/smile.jpg"
 export const BACKGROUND_MUSIC: Song = {
   title: "Can't Help Falling in Love",
   artist: "Shayan",
-  url: "./chfil.mp3",
+  url: "./chfil.mp3", // Placeholder
   coverUrl: "https://picsum.photos/100/100?grayscale"
 };
 
+// New Song for the Cleaning/Letter section
+export const ROMANTIC_LETTER_MUSIC: Song = {
+  title: "Be my baby",
+  artist: "The Ronettes",
+  // Placeholder URL
+  url: "./be my baby.mp3",
+  coverUrl: "https://picsum.photos/100/100?blur=5"
+};
+
+// Deprecated GALLERY_MUSIC as per request, but keeping structure if needed later
 export const GALLERY_MUSIC: Song = {
   title: "Perfect",
   artist: "Ed Sheeran", 
-  // Placeholder URL (Romantic instrumental)
-  url: "./perfect.mp3",
-  coverUrl: "https://picsum.photos/100/100?blur=2"
+  url: "",
+  coverUrl: ""
 };
 
 // Special Memory Constants
-// 1. Terrace Moment (10 Seconds)
+// 1. Terrace Moment (10 Seconds) - Visual Only now
 export const TERRACE_MOMENT_IMAGE = "./terrace_memory.png"; 
-export const TERRACE_MOMENT_AUDIO = "./pehli.mp3"; 
+export const TERRACE_MOMENT_AUDIO = ""; // Audio removed for 4th question
 
 // 2. Final Surprise Moment (15 Seconds)
 export const FINAL_SURPRISE_IMAGE = "./guitar.png"; // Change this to your 15s image
-export const FINAL_SURPRISE_AUDIO = "./pehli.mp3";
+export const FINAL_SURPRISE_AUDIO = "./pehli.mp3"; // Change this to your specific audio
+
+// UPDATED: Album covers are now local paths as requested
 export const PHOTOS: Photo[] = [
   { 
     id: 1, 
-    url: "https://picsum.photos/600/600?random=10", 
+    url: "./album/1/1.jpg", // Replace with your local photo
     caption: "The brightest smile",
     albumImages: [
-      "https://picsum.photos/600/800?random=101",
-      "https://picsum.photos/600/800?random=102",
-      "https://picsum.photos/600/800?random=103",
+      "./album/1/2.jpg",
+      "./album/1/3.jpg",
+      "./album/1/4.jpg",
     ]
   },
   { 
     id: 2, 
-    url: "https://picsum.photos/600/400?random=11", 
+    url: "./album/2/1.jpg",
     caption: "Our sweet memories",
     albumImages: [
-      "./t1.jpg",
-      "./t2.jpg",
-      "./t3.jpg",
+      "./album/2/2.jpg",
+      "./album/2/3.jpg",
+      "./album/2/4.jpg",
     ]
   },
   { 
     id: 3, 
-    url: "https://picsum.photos/600/800?random=12", 
-    caption: "Studying hard",
+    url: "./album/3/1.jpg", // Replace with your local photo
+    caption: "2023/24",
     albumImages: [
-      "https://picsum.photos/600/800?random=301",
-      "https://picsum.photos/600/800?random=302",
-      "https://picsum.photos/600/800?random=303",
+      "./album/3/2.jpg",
+      "./album/3/3.jpg",
+      "./album/3/4.jpg",
     ]
   },
   { 
     id: 4, 
-    url: "https://picsum.photos/600/600?random=13", 
+    url: "./album/4/1.jpg", // Replace with your local photo
     caption: "Date night",
     albumImages: [
-      "https://picsum.photos/600/800?random=401",
-      "https://picsum.photos/600/800?random=402",
-      "https://picsum.photos/600/800?random=403",
+      "./album/4/2.jpg",
+      "./album/4/3.jpg",
+      "./album/4/4.jpg",
     ]
   },
   { 
     id: 5, 
-    url: "https://picsum.photos/600/400?random=14", 
+    url: "./album/5/1.jpg", // Replace with your local photo
     caption: "Adventures together",
     albumImages: [
-      "https://picsum.photos/600/800?random=501",
-      "https://picsum.photos/600/800?random=502",
-      "https://picsum.photos/600/800?random=503",
+      "./album/5/2.jpg",
+      "./album/5/3.jpg",
+      "./album/5/4.jpg",
     ]
   },
 ];

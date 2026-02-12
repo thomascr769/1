@@ -6,7 +6,7 @@ import AudioPlayer from './components/AudioPlayer';
 import Quiz from './components/Quiz';
 import TeethCleaning from './components/TeethCleaning';
 import MouthTransition from './components/MouthTransition';
-import { BACKGROUND_MUSIC, GALLERY_MUSIC, PHOTOS, QUIZ_QUESTIONS, PARTNER_NAME } from './constants';
+import { BACKGROUND_MUSIC, ROMANTIC_LETTER_MUSIC, PHOTOS, QUIZ_QUESTIONS, PARTNER_NAME } from './constants';
 import { AppSection } from './types';
 
 // Simple Tooth for Background
@@ -50,8 +50,8 @@ const App: React.FC = () => {
   };
 
   const handleQuizComplete = () => {
-    // Switch Music for Gallery Section
-    setCurrentSong(GALLERY_MUSIC);
+    // Keep first song playing for Gallery (as requested)
+    // Removed: setCurrentSong(GALLERY_MUSIC);
     setIsPlaying(true);
 
     setActiveSection(AppSection.GALLERY);
@@ -59,6 +59,10 @@ const App: React.FC = () => {
   };
 
   const handleGoToCleaning = () => {
+    // Change song after Gallery continue button is clicked
+    setCurrentSong(ROMANTIC_LETTER_MUSIC);
+    setIsPlaying(true);
+    
     setActiveSection(AppSection.CLEANING);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -141,12 +145,23 @@ const App: React.FC = () => {
 
                    <h2 className="font-script text-4xl text-valentine-600 mb-6 text-center">My Dearest...</h2>
                    
-                   <p className="text-slate-700 leading-relaxed font-medium text-lg mb-6">
-                       From our first meeting on the terrace to every song we've shared, 
-                       my life has been brighter with you in it. 
-                       <br/><br/>
-                       Thank you for being with me for over 900 days, i hope we stay forever. I love you.
-                   </p>
+                   <div className="text-slate-700 leading-relaxed font-medium text-sm md:text-base space-y-4 mb-8 overflow-y-auto max-h-[60vh]">
+                       <p>
+                           From the moment we met, you became the reason my world is brighter. 
+                           I find myself lucky just to be with you baby.
+                       </p>
+                       <p>
+                           Sorry for not being soft and kind with you, trying my best to improve myself.
+                           890 days of togetherness and many more to come.
+                       </p>
+                       <p>
+                           Thank you for tolerating my behaviour and still being kind and soft to me. You are my safe space,
+                           You are not just my Valentine, but my best friend and my future. I know I am not good at expressing but 
+                       </p>
+                       <p>
+                           I love you more than words could ever say.
+                       </p>
+                   </div>
 
                    <p className="font-script text-3xl text-right text-dental-600">
                        Happy Valentine's Day! ❤️
