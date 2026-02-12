@@ -4,11 +4,11 @@ export const PARTNER_NAME = "My Favorite Future Dentist";
 
 // --- CUSTOMIZE IMAGES HERE ---
 
-export const PROFILE_PICTURE = "/profile.jpg"; 
+export const PROFILE_PICTURE = "/1/profile.jpg"; 
 
 // Replace this with your specific teeth image if you have one locally
 // e.g., "/assets/teeth_photo.jpg"
-export const TEETH_IMAGE_SRC = "/album/smile.jpg"
+export const TEETH_IMAGE_SRC = "1/album/smile.jpg"
 export const BACKGROUND_MUSIC: Song = {
   title: "Can't Help Falling in Love",
   artist: "Shayan",
