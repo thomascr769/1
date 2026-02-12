@@ -4,15 +4,15 @@ export const PARTNER_NAME = "My Favorite Future Dentist";
 
 // --- CUSTOMIZE IMAGES HERE ---
 
-export const PROFILE_PICTURE = "./profile.jpg"; 
+export const PROFILE_PICTURE = "/profile.jpg"; 
 
 // Replace this with your specific teeth image if you have one locally
 // e.g., "/assets/teeth_photo.jpg"
-export const TEETH_IMAGE_SRC = "./album/smile.jpg"
+export const TEETH_IMAGE_SRC = "/album/smile.jpg"
 export const BACKGROUND_MUSIC: Song = {
   title: "Can't Help Falling in Love",
   artist: "Shayan",
-  url: "./chfil.mp3", // Placeholder
+  url: "/chfil.mp3", // Placeholder
   coverUrl: "https://picsum.photos/100/100?grayscale"
 };
 
