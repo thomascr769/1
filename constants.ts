@@ -4,7 +4,7 @@ export const PARTNER_NAME = "My Favorite Future Dentist";
 
 // --- CUSTOMIZE IMAGES HERE ---
 
-export const PROFILE_PICTURE = '/profile.jpg'; 
+export const PROFILE_PICTURE = "/profile.jpg"; 
 
 // Replace this with your specific teeth image if you have one locally
 // e.g., "/assets/teeth_photo.jpg"
@@ -12,7 +12,7 @@ export const TEETH_IMAGE_SRC = "/album/smile.jpg"
 export const BACKGROUND_MUSIC: Song = {
   title: "Can't Help Falling in Love",
   artist: "Shayan",
-  url: "/chfil.mp3", // Placeholder
+  url: "https://github.com/thomascr769/1/blob/master/chfil.mp3", // Placeholder
   coverUrl: "https://picsum.photos/100/100?grayscale"
 };
 
@@ -21,7 +21,7 @@ export const ROMANTIC_LETTER_MUSIC: Song = {
   title: "Be my baby",
   artist: "The Ronettes",
   // Placeholder URL
-  url: '/be my baby.mp3',
+  url: "/be my baby.mp3",
   coverUrl: "https://picsum.photos/100/100?blur=5"
 };
 
@@ -35,18 +35,18 @@ export const GALLERY_MUSIC: Song = {
 
 // Special Memory Constants
 // 1. Terrace Moment (10 Seconds) - Visual Only now
-export const TERRACE_MOMENT_IMAGE = "./terrace_memory.png"; 
+export const TERRACE_MOMENT_IMAGE = "/1/blob/master/terrace_memory.png"; 
 export const TERRACE_MOMENT_AUDIO = ""; // Audio removed for 4th question
 
 // 2. Final Surprise Moment (15 Seconds)
-export const FINAL_SURPRISE_IMAGE = "./guitar.png"; // Change this to your 15s image
-export const FINAL_SURPRISE_AUDIO = "./pehli.mp3"; // Change this to your specific audio
+export const FINAL_SURPRISE_IMAGE = "https://github.com/thomascr769/1/blob/master/guitar.png"; // Change this to your 15s image
+export const FINAL_SURPRISE_AUDIO = "/1/pehli.mp3"; // Change this to your specific audio
 
 // UPDATED: Album covers are now local paths as requested
 export const PHOTOS: Photo[] = [
   { 
     id: 1, 
-    url: "./album/1/1.jpg", // Replace with your local photo
+    url: "/album/1/1.jpg", // Replace with your local photo
     caption: "The brightest smile",
     albumImages: [
       "./album/1/2.jpg",
