@@ -12,7 +12,7 @@ export const TEETH_IMAGE_SRC = "/album/smile.jpg"
 export const BACKGROUND_MUSIC: Song = {
   title: "Can't Help Falling in Love",
   artist: "Shayan",
-  url: "https://github.com/thomascr769/1/blob/master/chfil.mp3", // Placeholder
+  url: "/chfil.mp3", // Placeholder
   coverUrl: "https://picsum.photos/100/100?grayscale"
 };
 
@@ -21,7 +21,7 @@ export const ROMANTIC_LETTER_MUSIC: Song = {
   title: "Be my baby",
   artist: "The Ronettes",
   // Placeholder URL
-  url: "/be my baby.mp3",
+  url: "/1/be my baby.mp3",
   coverUrl: "https://picsum.photos/100/100?blur=5"
 };
 
