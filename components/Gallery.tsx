@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Photo } from '../types';
+import { Photo } from '/types';
 import { ChevronLeft, Maximize2, X, ArrowRight } from 'lucide-react';
 
 interface GalleryProps {

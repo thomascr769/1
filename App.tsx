@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Heart } from 'lucide-react';
-import Hero from './components/Hero';
-import Gallery from './components/Gallery';
-import AudioPlayer from './components/AudioPlayer';
-import Quiz from './components/Quiz';
-import TeethCleaning from './components/TeethCleaning';
-import MouthTransition from './components/MouthTransition';
-import { BACKGROUND_MUSIC, ROMANTIC_LETTER_MUSIC, PHOTOS, QUIZ_QUESTIONS, PARTNER_NAME } from './constants';
-import { AppSection } from './types';
+import Hero from '/components/Hero';
+import Gallery from '/components/Gallery';
+import AudioPlayer from '/components/AudioPlayer';
+import Quiz from '/components/Quiz';
+import TeethCleaning from '/components/TeethCleaning';
+import MouthTransition from '/components/MouthTransition';
+import { BACKGROUND_MUSIC, ROMANTIC_LETTER_MUSIC, PHOTOS, QUIZ_QUESTIONS, PARTNER_NAME } from '/constants';
+import { AppSection } from '/types';
 
 // Simple Tooth for Background
 const ToothBg: React.FC<{ className?: string, style?: React.CSSProperties }> = ({ className, style }) => (
