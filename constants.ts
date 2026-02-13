@@ -4,7 +4,7 @@ export const PARTNER_NAME = "My Favorite Future Dentist";
 
 // --- CUSTOMIZE IMAGES HERE ---
 
-export const PROFILE_PICTURE = "https://drive.google.com/drive-viewer/AKGpihaXFvkAJ8FTNzrvt0qq3JCLxew25qk12UG3XZd17hm4oinyWuuYzTOxOXrw56fMvzYTZSfaITtCH3LtWj60_-ysty30p0272OA=s2560"; 
+export const PROFILE_PICTURE = "https://ibb.co/Z6gK7jX8"; 
 
 // Replace this with your specific teeth image if you have one locally
 // e.g., "/assets/teeth_photo.jpg"
@@ -35,7 +35,7 @@ export const GALLERY_MUSIC: Song = {
 
 // Special Memory Constants
 // 1. Terrace Moment (10 Seconds) - Visual Only now
-export const TERRACE_MOMENT_IMAGE = "/1/blob/master/terrace_memory.png"; 
+export const TERRACE_MOMENT_IMAGE = "https://ibb.co/jPHsgS8W"; 
 export const TERRACE_MOMENT_AUDIO = ""; // Audio removed for 4th question
 
 // 2. Final Surprise Moment (15 Seconds)
