@@ -1,4 +1,4 @@
-import { Photo, QuizQuestion, Song } from '/types';
+import { Photo, QuizQuestion, Song } from '/types.ts';
 
 export const PARTNER_NAME = "My Favorite Future Dentist";
 
@@ -21,7 +21,7 @@ export const ROMANTIC_LETTER_MUSIC: Song = {
   title: "Be my baby",
   artist: "The Ronettes",
   // Placeholder URL
-  url: "/1/be my baby.mp3",
+  url: "/be my baby.mp3",
   coverUrl: "https://picsum.photos/100/100?blur=5"
 };
 
