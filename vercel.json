@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-=======
-{
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
->>>>>>> 5d8d9f5 (fix: force case-sensitive rename for Gallery component)
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
