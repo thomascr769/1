@@ -4,7 +4,7 @@ export const PARTNER_NAME = "My Favorite Future Dentist";
 
 // --- CUSTOMIZE IMAGES HERE ---
 
-export const PROFILE_PICTURE = "/profile.jpg"; 
+export const PROFILE_PICTURE = "https://drive.google.com/drive-viewer/AKGpihaXFvkAJ8FTNzrvt0qq3JCLxew25qk12UG3XZd17hm4oinyWuuYzTOxOXrw56fMvzYTZSfaITtCH3LtWj60_-ysty30p0272OA=s2560"; 
 
 // Replace this with your specific teeth image if you have one locally
 // e.g., "/assets/teeth_photo.jpg"
@@ -39,7 +39,7 @@ export const TERRACE_MOMENT_IMAGE = "/1/blob/master/terrace_memory.png";
 export const TERRACE_MOMENT_AUDIO = ""; // Audio removed for 4th question
 
 // 2. Final Surprise Moment (15 Seconds)
-export const FINAL_SURPRISE_IMAGE = "https://github.com/thomascr769/1/blob/master/guitar.png"; // Change this to your 15s image
+export const FINAL_SURPRISE_IMAGE = "https://drive.google.com/drive-viewer/AKGpihYbrUyQmy160_4B96OOfrsiLSF51vbYIRS_xYVLuP_1as8KXHQqOyntcapVM-_-56dmy1OBSnpp6JC0JU1PUOsgK0PCvZ1nP5c=s1600-rw-v1"; // Change this to your 15s image
 export const FINAL_SURPRISE_AUDIO = "/1/pehli.mp3"; // Change this to your specific audio
 
 // UPDATED: Album covers are now local paths as requested
